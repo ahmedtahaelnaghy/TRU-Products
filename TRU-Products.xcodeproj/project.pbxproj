@@ -48,6 +48,8 @@
 		FCEBF8FC2D983CF100D73631 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBF8FB2D983CF100D73631 /* Double+Extension.swift */; };
 		FCEBF8FF2D98550000D73631 /* ProductsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBF8FE2D98550000D73631 /* ProductsCollectionViewDataSource.swift */; };
 		FCEBF9022D985CBE00D73631 /* CollectionViewTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBF9012D985CBE00D73631 /* CollectionViewTypes.swift */; };
+		FCEBF9092D986FAC00D73631 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEBF9082D986FAC00D73631 /* ProductDetailsViewController.xib */; };
+		FCEBF90A2D986FAC00D73631 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBF9072D986FAC00D73631 /* ProductDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		FCEBF8FB2D983CF100D73631 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		FCEBF8FE2D98550000D73631 /* ProductsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		FCEBF9012D985CBE00D73631 /* CollectionViewTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTypes.swift; sourceTree = "<group>"; };
+		FCEBF9072D986FAC00D73631 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		FCEBF9082D986FAC00D73631 /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,7 @@
 		FCEBF89D2D97772C00D73631 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FCEBF9032D986F7C00D73631 /* ProductsDetails */,
 				FCEBF8A22D97782A00D73631 /* Products */,
 			);
 			path = Scenes;
@@ -454,6 +459,39 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		FCEBF9032D986F7C00D73631 /* ProductsDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FCEBF9042D986F8700D73631 /* Presentation */,
+			);
+			path = ProductsDetails;
+			sourceTree = "<group>";
+		};
+		FCEBF9042D986F8700D73631 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FCEBF9062D986F9600D73631 /* ViewModel */,
+				FCEBF9052D986F9200D73631 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FCEBF9052D986F9200D73631 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEBF9072D986FAC00D73631 /* ProductDetailsViewController.swift */,
+				FCEBF9082D986FAC00D73631 /* ProductDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCEBF9062D986F9600D73631 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -561,6 +599,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEBF9092D986FAC00D73631 /* ProductDetailsViewController.xib in Resources */,
 				FCA32DFD2D97768600A44E1A /* Assets.xcassets in Resources */,
 				FCEBF8A12D9777D900D73631 /* Colors.xcassets in Resources */,
 				FCEBF8E02D978A8400D73631 /* ProductsGridCollectionViewCell.xib in Resources */,
@@ -606,6 +645,7 @@
 				FCEBF8EA2D97920700D73631 /* ProductsEntity.swift in Sources */,
 				FCEBF8E72D978ADF00D73631 /* ProductsRepository.swift in Sources */,
 				FCEBF8A82D97784700D73631 /* ProductsViewController.swift in Sources */,
+				FCEBF90A2D986FAC00D73631 /* ProductDetailsViewController.swift in Sources */,
 				FCEBF8F72D97D56B00D73631 /* UIImageView+Extension.swift in Sources */,
 				FCEBF8C22D977C7F00D73631 /* BaseViewController.swift in Sources */,
 				FCEBF8ED2D9792C900D73631 /* ProductsCashing.swift in Sources */,

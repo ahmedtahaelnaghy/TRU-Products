@@ -9,6 +9,10 @@ import UIKit
 import SkeletonView
 
 final class ProductsCollectionViewDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    var getData: ((_ page: Int) -> Void)?
+    var cellAction: ((_ index: Int) -> Void)?
+    
     private let viewModel: ProductsViewModel
     
     private var isGrid: Bool {
@@ -27,6 +31,10 @@ final class ProductsCollectionViewDataSource: NSObject, UICollectionViewDelegate
         isGrid ? setupGridCell(collectionView, at: indexPath) : setupListCell(collectionView, at: indexPath)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        cellAction?(indexPath.row)
+    }
+    
     private func setupGridCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(with: ProductsGridCollectionViewCell.self, for: indexPath)
         cell.configureCell(with: viewModel.cellData(at: indexPath.row))
@@ -42,6 +50,8 @@ final class ProductsCollectionViewDataSource: NSObject, UICollectionViewDelegate
 
 extension ProductsCollectionViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // MARK: - The API Request not have page number in requests for the pagination.
+        /// This code is the pagination implementation when has page in the api requests
         let contentHeight = scrollView.contentSize.height
         let scrollOffset = scrollView.contentOffset.y
         let height = scrollView.frame.size.height
@@ -49,13 +59,7 @@ extension ProductsCollectionViewDataSource {
               !viewModel.isCollectionLoading,
               viewModel.lastPage > viewModel.currentPage else { return }
         viewModel.isCollectionLoading = true
-        getData(page: viewModel.currentPage + 1)
-    }
-    
-    func getData(page: Int) {
-        Task {
-            await viewModel.getProducts(page: page)
-        }
+        getData?(viewModel.currentPage + 1)
     }
 }
 

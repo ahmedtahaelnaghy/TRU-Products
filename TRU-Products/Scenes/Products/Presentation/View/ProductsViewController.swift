@@ -25,6 +25,11 @@ final class ProductsViewController: BaseViewController {
         getProducts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        isNavigationHidden(true)
+    }
+    
     @IBAction private func didTapGridProducts(_ sender: Any) {
         guard viewModel.collectionType != .grid else { return }
         setupButtonsStyle(.grid)
@@ -36,10 +41,10 @@ final class ProductsViewController: BaseViewController {
     }
 }
 
+// MARK: - Setup Views
 private extension ProductsViewController {
     func setupViews() {
         setuCollectionView()
-        isNavigationHidden(true)
         setupButtonsStyle(.grid)
         handleSwipeToRefresh()
     }
@@ -56,6 +61,17 @@ private extension ProductsViewController {
         productsCollectionView.dataSource = productsDataSource
         productsCollectionView.registerCell(ProductsGridCollectionViewCell.self)
         productsCollectionView.registerCell(ProductsListCollectionViewCell.self)
+        
+        productsDataSource?.cellAction = { [weak self] index in
+            guard let self else { return }
+            let product = viewModel.cellData(at: index)
+            push(ProductDetailsViewController(product: product))
+        }
+        
+        productsDataSource?.getData = { [weak self] page in
+            guard let self else { return }
+            getProducts(page: page)
+        }
     }
     
     func handleSwipeToRefresh() {

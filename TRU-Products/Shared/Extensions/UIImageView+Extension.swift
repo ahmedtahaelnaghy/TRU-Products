@@ -12,8 +12,8 @@ final class ImageCache {
 }
 
 extension UIImageView {
-    func loadImage(_ urlString: String?, placeholder: UIImage? = nil) {
-        self.image = placeholder
+    func loadImage(_ urlString: String?) {
+        self.image = UIImage(systemName: "photo.artframe")
         
         guard let urlString else { return }
         

@@ -1,9 +1,22 @@
-# Xcode specific files
+# macOS system files
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode specific files
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
 xcuserdata/
-*.xcscmblueprint
 *.xccheckout
+*.xcscmblueprint
 *.xcworkspace
+
+# Ignore Xcode state and user-specific files
+*.xcuserstate
+UserInterfaceState.xcuserstate
 
 # Swift Package Manager
 .build/
@@ -19,7 +32,6 @@ Carthage/
 # Derived Data & Index
 DerivedData/
 .idea/
-*.xcuserstate
 *.swp
 *.swo
 *.swn

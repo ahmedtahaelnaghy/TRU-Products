@@ -9,6 +9,7 @@ import Foundation
 
 enum NetworkError: Error {
     case invalidRequest
+    case somethingWentWrong
     case httpError(Int)
     case networkError(URLError)
     case decodingError(DecodingError)
@@ -20,6 +21,8 @@ extension NetworkError {
         switch self {
         case .invalidRequest:
             return "Unfortunately Server Error!, try again later"
+        case .somethingWentWrong:
+            return "Something went wrong!"
         case .httpError(let statusCode):
             return "HTTP error with status code: \(statusCode)"
         case .networkError(let urlError):

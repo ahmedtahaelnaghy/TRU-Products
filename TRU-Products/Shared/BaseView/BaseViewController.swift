@@ -27,4 +27,6 @@ class BaseViewController: UIViewController {
         activityIndicator.removeFromSuperview()
         activityIndicator.stopAnimating()
     }
+    
+    var cancellable = Cancellable()
 }

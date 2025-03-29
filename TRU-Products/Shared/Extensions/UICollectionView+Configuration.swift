@@ -7,7 +7,18 @@
 
 import UIKit
 
+extension UICollectionViewCell {
+    var cellName: String {
+        String(describing: self)
+    }
+}
+
 extension UICollectionView {
+    
+    var cellName: String {
+        String(describing: self)
+    }
+    
     func registerCell<T: UICollectionViewCell>(_ cellClass: T.Type) {
         let identifier = String(describing: T.self)
         self.register(UINib(nibName: identifier, bundle: nil), forCellWithReuseIdentifier: identifier)

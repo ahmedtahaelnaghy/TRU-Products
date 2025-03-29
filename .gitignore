@@ -1,0 +1,36 @@
+# Xcode specific files
+.DS_Store
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.xcworkspace
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+
+# Derived Data & Index
+DerivedData/
+.idea/
+*.xcuserstate
+*.swp
+*.swo
+*.swn
+
+# Temporary files
+*.log
+*.tmp
+*.lock
+
+# Generated files
+*.hmap
+*.ipa
+*.app
+*.dSYM/

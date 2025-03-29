@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
     static var baseURL = "https://fakestoreapi.com/"
+    static var currency = "EGP"
 }
